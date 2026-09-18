@@ -78,6 +78,9 @@ fn map_position(v: u8) -> Result<Position, ConvertError> {
     match v {
         TAFFY_POSITION_RELATIVE => Ok(Position::Relative),
         TAFFY_POSITION_ABSOLUTE => Ok(Position::Absolute),
+        TAFFY_POSITION_STATIC => Ok(Position::Static),
+        TAFFY_POSITION_FIXED => Ok(Position::Fixed),
+        TAFFY_POSITION_STICKY => Ok(Position::Sticky),
         _ => Err(ConvertError(TAFFY_ERR_INVALID_ARGUMENT)),
     }
 }
@@ -402,6 +405,9 @@ pub(crate) fn style_to_c(s: &Style) -> CTaffyStyle {
         position_type: match s.position {
             Position::Relative => TAFFY_POSITION_RELATIVE,
             Position::Absolute => TAFFY_POSITION_ABSOLUTE,
+            Position::Static => TAFFY_POSITION_STATIC,
+            Position::Fixed => TAFFY_POSITION_FIXED,
+            Position::Sticky => TAFFY_POSITION_STICKY,
         },
         direction: match s.direction {
             Direction::Ltr => TAFFY_DIRECTION_LTR,

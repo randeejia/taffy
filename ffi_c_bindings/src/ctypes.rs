@@ -34,6 +34,9 @@ pub const TAFFY_DISPLAY_GRID: u8 = 4;
 // taffy_position_type_t
 pub const TAFFY_POSITION_RELATIVE: u8 = 0;
 pub const TAFFY_POSITION_ABSOLUTE: u8 = 1;
+pub const TAFFY_POSITION_STATIC: u8 = 2;
+pub const TAFFY_POSITION_FIXED: u8 = 3;
+pub const TAFFY_POSITION_STICKY: u8 = 4;
 
 // taffy_direction_t
 pub const TAFFY_DIRECTION_LTR: u8 = 0;

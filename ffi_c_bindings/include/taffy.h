@@ -111,6 +111,9 @@ typedef enum taffy_display_t {
 typedef enum taffy_position_type_t {
     TAFFY_POSITION_RELATIVE = 0,
     TAFFY_POSITION_ABSOLUTE = 1,
+    TAFFY_POSITION_STATIC = 2,
+    TAFFY_POSITION_FIXED = 3,
+    TAFFY_POSITION_STICKY = 4,
 } taffy_position_type_t;
 
 /* CSS `direction`. Note: modern taffy has no "inherit" mode (unlike stretch). */

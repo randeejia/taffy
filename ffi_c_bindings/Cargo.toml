@@ -1,5 +1,5 @@
 [package]
-name = "taffy-ffi"
+name = "taffy_ffi"
 version = "0.1.0"
 edition = "2021"
 description = "C FFI bindings for the Taffy layout engine (Flexbox / Grid / Block)"
@@ -7,7 +7,7 @@ license = "MIT"
 repository = "https://github.com/DioxusLabs/taffy"
 
 [lib]
-name = "taffy-ffi"
+name = "taffy_ffi"
 # - staticlib: link directly into C++/JNI/NAPI/Swift native binaries (libtaffy_c.a)
 # - cdylib:    dynamic linking (libtaffy_c.so / .dylib / .dll)
 # - rlib:      Rust integration tests / future sub-bindings
