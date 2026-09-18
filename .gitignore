@@ -6,6 +6,7 @@
 /yoga_test_fixtures_grouped
 /test_fixtures/_scratch
 /.chrome-for-testing
+/ffi_c_bindings/target
 
 **/*.rs.bk
 Cargo.lock
