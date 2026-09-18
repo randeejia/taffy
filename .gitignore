@@ -7,7 +7,7 @@
 /test_fixtures/_scratch
 /.chrome-for-testing
 /ffi_c_bindings/target
-
+/ffi_c_bindings/.cargo
 **/*.rs.bk
 Cargo.lock
 .DS_Store
