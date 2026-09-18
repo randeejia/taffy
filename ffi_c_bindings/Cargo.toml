@@ -1,0 +1,37 @@
+[package]
+name = "taffy-ffi"
+version = "0.1.0"
+edition = "2021"
+description = "C FFI bindings for the Taffy layout engine (Flexbox / Grid / Block)"
+license = "MIT"
+repository = "https://github.com/DioxusLabs/taffy"
+
+[lib]
+name = "taffy-ffi"
+# - staticlib: link directly into C++/JNI/NAPI/Swift native binaries (libtaffy_c.a)
+# - cdylib:    dynamic linking (libtaffy_c.so / .dylib / .dll)
+# - rlib:      Rust integration tests / future sub-bindings
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+taffy = { path = "../", default-features = false, features = [
+    "std",
+    "taffy_tree",
+    "flexbox",
+    "flexbox_balance",
+    "grid",
+    "block_layout",
+    "float_layout",
+    "calc",
+    "content_size",
+] }
+
+# Standalone workspace: this crate is intentionally detached from the root
+# taffy workspace so it can be built (and cross-compiled for Android / OHOS /
+# iOS) independently, mirroring how the upstream stretch bindings worked.
+[workspace]
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "unwind"
